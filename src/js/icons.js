@@ -14,8 +14,8 @@ export function loadIcons() {
   let icoNameArray = [];
   dataIcons.forEach(icon => {
     icons.push(icon.iconName);
-    Assets.add(icon.iconName, url + encodeURIComponent(icon.iconName) + '.jpg');
-    icoNameArray.push(icon.iconName);
+    Assets.add(encodeURI(icon.iconName), url + encodeURI(icon.iconName) + '.jpg');
+    icoNameArray.push(encodeURI(icon.iconName));
   })
 
   // loader.load();
@@ -26,8 +26,8 @@ export function loadIcons() {
 
   texturesPromise.then((textures) => {
     dataIcons.forEach((icon, ind) =>{
-      let texture = textures[icon.iconName];
-      texture.defaultAnchor.set(0.5, 0.5);
+      let texture = textures[encodeURI(icon.iconName)];
+      // texture.defaultAnchor.set(0.5, 0.5);
   
       let name = icon.iconName;
       let playTitle = icon.playTitle;
