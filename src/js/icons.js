@@ -1,4 +1,5 @@
 import * as PIXI from 'pixi.js';
+import { Assets } from '@pixi/assets';
 import * as d3 from 'd3';
 import { dataIcons, init, progressObject, arrangeWords } from "../script.js";
 
@@ -13,7 +14,7 @@ export function loadIcons() {
   let icoNameArray = [];
   dataIcons.forEach(icon => {
     icons.push(icon.iconName);
-    PIXI.Assets.add(icon.iconName, url + icon.iconName + '.jpg');
+    Assets.add(icon.iconName, url + icon.iconName + '.jpg');
     icoNameArray.push(icon.iconName);
   })
 
@@ -21,46 +22,46 @@ export function loadIcons() {
   console.log("logging loadIcons");
   oldProgressValue = progressObject.getProgress;
 
-  const texturesPromise = PIXI.Assets.load(icoNameArray);
+  const texturesPromise = Assets.load(icoNameArray);
+
+  texturesPromise.then((textures) => {
+    dataIcons.forEach((icon, ind) =>{
+      let texture = textures[icon.iconName];
+      texture.defaultAnchor.set(0.5, 0.5);
+  
+      let name = icon.iconName;
+      let playTitle = icon.playTitle;
+      let obj = {texture, name, playTitle};
+  
+      texData.push(Object.assign({}, obj));
+    });
+  
+    console.log(`Completed loading ${icons.length} icons`);
+    arrangeWords();
+  });
 }
 
 // loader.onProgress.add((e) => {
 //   progressObject.value = oldProgressValue + (e.progress/2);
 // });
 
-texturesPromise.then((textures) => {
-  dataIcons.forEach((icon, ind) =>{
-    let texture = loader.resources[url + icon.iconName + '.jpg'].texture;
-    texture.defaultAnchor.set(0.5, 0.5);
+// loader.onComplete.add(() => {
+//   dataIcons.forEach((icon, ind) =>{
+//     let texture = loader.resources[url + icon.iconName + '.jpg'].texture;
+//     texture.defaultAnchor.set(0.5, 0.5);
 
-    let name = icon.iconName;
-    let playTitle = icon.playTitle;
-    let obj = {texture, name, playTitle};
+//     let name = icon.iconName;
+//     let playTitle = icon.playTitle;
+//     let obj = {texture, name, playTitle};
 
-    texData.push(Object.assign({}, obj));
-  });
+//     texData.push(Object.assign({}, obj));
+//   });
 
-  console.log(`Completed loading ${icons.length} icons`);
-  arrangeWords();
-});
+//   progressObject.value = oldProgressValue + 50;
 
-loader.onComplete.add(() => {
-  dataIcons.forEach((icon, ind) =>{
-    let texture = loader.resources[url + icon.iconName + '.jpg'].texture;
-    texture.defaultAnchor.set(0.5, 0.5);
-
-    let name = icon.iconName;
-    let playTitle = icon.playTitle;
-    let obj = {texture, name, playTitle};
-
-    texData.push(Object.assign({}, obj));
-  });
-
-  progressObject.value = oldProgressValue + 50;
-
-  console.log(`Completed loading ${icons.length} icons`);
-  arrangeWords();
-});
+//   console.log(`Completed loading ${icons.length} icons`);
+//   arrangeWords();
+// });
 
 export {loader, texData};
 

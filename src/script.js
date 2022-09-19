@@ -72,7 +72,7 @@ app.stage.filters = [bloom];
  textContainer.zIndex = 10;
  app.stage.addChild(textContainer);
 
- app.stage.interactive = true;
+//  app.stage.interactive = true;
  app.stage.on('pointermove', e => {
    rendertextContainer(e);
    renderfaceContainer(e);

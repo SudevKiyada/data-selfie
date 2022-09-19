@@ -5,6 +5,7 @@
     "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
+    "@pixi/assets": "^6.5.3",
     "d3": "^7.6.1",
     "moment": "^2.29.4",
     "p5": "^1.4.2",
