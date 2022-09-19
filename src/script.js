@@ -7,17 +7,17 @@
 // info
 // loader
 
-import {Block} from './blocks_new.js';
-import {textBlock} from './textBlock_new.js';
-import {loader, texData, loadIcons} from './icons.js';
-import {bgCodeTicker} from './code.js';
-import {initTitle, animateTitle} from './title.js';
+import {Block} from './js/blocks_new.js';
+import {textBlock} from './js/textBlock_new.js';
+import {loader, texData, loadIcons} from './js/icons.js';
+import {bgCodeTicker} from './js/code.js';
+import {initTitle, animateTitle} from './js/title.js';
 
 // variables
 let blocks = [], textBlocks = [];
 let face_base_context, face_data;
 let threshold = 20, level = 0;
-let textblocks_limit = 10;
+let textblocks_limit = 100;
 let dataWords = [];
 let dataIcons = [];
 let dataApps = [];
@@ -359,7 +359,6 @@ function imageProcessing(path) {
 function introTags(clock){
    let interval = setInterval(() => {
       let alpha = Math.abs((Math.sin((app.ticker.lastTime - clock)/2000 + 0)));
-      console.log("intro alpha:" + alpha)
 
       textBlocks.forEach(block => block.graphics.alpha = alpha);
       blocks.forEach(block => block.graphics.alpha = alpha * block.tAlpha);

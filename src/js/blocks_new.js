@@ -1,6 +1,5 @@
-import {app, blocks, faceContainer, face_data, face_base_context, level, threshold, dataApps, themeColor2} from './script.js';
+import {app, blocks, faceContainer, face_data, face_base_context, level, threshold, dataApps, themeColor2, dataIcons} from '../script.js';
 import { loader, texData } from './icons.js';
-import { dataIcons } from './script.js';
 
 export class Block{
   

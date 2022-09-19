@@ -1,4 +1,4 @@
-import { app, themeColor } from "./script.js";
+import { app, themeColor } from "../script.js";
 
 const squareArray = ['(NAME)', '(PROJECT)'];
 const titleArray = ['(SUDEV KIYADA)', '(MY MARK ON INTERNET)'];

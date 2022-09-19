@@ -1,4 +1,4 @@
-import { dataIcons, init, progressObject, arrangeWords } from "./script.js";
+import { dataIcons, init, progressObject, arrangeWords } from "../script.js";
 
 let icons = [];
 

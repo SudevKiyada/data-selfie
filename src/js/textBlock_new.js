@@ -1,4 +1,4 @@
-import {app, blocks, textContainer, face_data, face_base_context, level, threshold, textBlocks, dataWords, dataVideos, themeColor} from './script.js';
+import {app, blocks, textContainer, face_data, face_base_context, level, threshold, textBlocks, dataWords, dataVideos, themeColor} from '../script.js';
 
 const tsb = document.getElementById("textSidebar");
 
