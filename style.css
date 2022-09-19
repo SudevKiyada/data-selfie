@@ -1,0 +1,150 @@
+@font-face {
+  font-family: 'Disket';
+  src: url('./assets/Disket-Mono-Regular.ttf') format('truetype'),
+       url('./assets/Disket-Mono-Regular.woff') format('woff'),
+       url('./assets/Disket-Mono-Bold.ttf') format('truetype'),
+       url('./assets/Disket-Mono-Bold.woff') format('woff');
+  font-display: swap;
+}
+
+body {
+  background-color: #000405;
+}
+
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  canvas {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  #sidebar {
+    position: fixed;
+    height: auto;
+    border-radius: 24px;
+    background-color: black;
+    width: 20vw;
+    padding: 24px;
+    box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(64px) saturate(2.5);
+    background: rgba(0, 0, 0, 0.9);
+    transition: transform 0.2s, opacity 0.3s ;
+    transition-timing-function: cubic-bezier(.93,.01,.87,1.45);
+  }
+  
+  .active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 100;
+    pointer-events: none;
+  }
+  
+  .inactive {
+    opacity: 0;
+    transform: scale(0.8);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .persist {
+    pointer-events: all;
+    transform: scale(1);
+    opacity: 1;
+    z-index: 100;
+  }
+  
+  #icon {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    height: 120px;
+    width: 120px;
+    border-radius: 8px;
+  }
+  
+  #icon_name {
+    margin: 12px 0;
+    font-size: 1.5em;
+    font-family: 'Disket';
+    color: white;
+  }
+  
+  .info {
+    margin-top: 12px;
+    color: white;
+    font-family: 'Disket';
+    font-size: 0.5em;
+  }
+  
+  #textSidebar {
+    position: fixed;
+    height: auto;
+    border-radius: 24px;
+    background-color: #0AA5FF;
+    width: 20vw;
+    padding: 24px;
+    box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(6px) saturate(0);
+    background: rgba(0, 0, 0, 0.8);
+    transition: transform 0.2s, opacity 0.3s;
+    transition-timing-function: cubic-bezier(.93,.01,.87,1.45);
+  }
+  
+  #Tag {
+    margin: 12px 0;
+    font-size: 1.5em;
+    font-family: 'Disket';
+    font-weight: bold;
+    color: white;
+  }
+  
+  .axis {
+    font-family: 'Disket';
+    opacity: 0.75;
+  }
+  
+  * {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+    -o-user-select:none;
+  }
+  
+  #instances {
+    color: white;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-style: normal;
+    /* opacity: 0.75; */
+    font-family: 'Disket';
+  }
+  
+  #toggleCategory {
+    padding: 16px 32px;
+    color: white;
+    font-family: 'Inter Medium';
+    position: fixed;
+    bottom: 2%;
+    right: 1%;
+    border-radius: 40px;
+    border: none;
+    background: black;
+  }
+  
+  .loader {
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+  }
+  
+  .hide {
+    display: none;
+  }
