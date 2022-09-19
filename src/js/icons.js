@@ -14,7 +14,7 @@ export function loadIcons() {
   let icoNameArray = [];
   dataIcons.forEach(icon => {
     icons.push(icon.iconName);
-    Assets.add(encodeURIComponent(icon.iconName), encodeURIComponent(url + icon.iconName + '.jpg'));
+    Assets.add(encodeURIComponent(icon.iconName), url + encodeURIComponent(icon.iconName + '.jpg'));
     icoNameArray.push(encodeURIComponent(icon.iconName));
   })
 
