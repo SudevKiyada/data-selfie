@@ -325,6 +325,8 @@ export function arrangeWords(){
  
    //   ct++;
    // }
+
+   progressObject.value = 100;
  
    console.log("Done printing " + textblocks_limit + " textblocks.");
    // createLetterBase();

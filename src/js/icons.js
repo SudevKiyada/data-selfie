@@ -10,18 +10,38 @@ let url = "./icons/";
 let oldProgressValue;
 
 export function loadIcons() {
+  let icoNameArray = [];
   dataIcons.forEach(icon => {
     icons.push(icon.iconName);
-    loader.add(url + icon.iconName + '.jpg');
+    PIXI.Assets.add(icon.iconName, url + icon.iconName + '.jpg');
+    icoNameArray.push(icon.iconName);
   })
 
-  loader.load();
+  // loader.load();
   console.log("logging loadIcons");
   oldProgressValue = progressObject.getProgress;
+
+  const texturesPromise = PIXI.Assets.load(icoNameArray);
 }
 
-loader.onProgress.add((e) => {
-  progressObject.value = oldProgressValue + (e.progress/2);
+// loader.onProgress.add((e) => {
+//   progressObject.value = oldProgressValue + (e.progress/2);
+// });
+
+texturesPromise.then((textures) => {
+  dataIcons.forEach((icon, ind) =>{
+    let texture = loader.resources[url + icon.iconName + '.jpg'].texture;
+    texture.defaultAnchor.set(0.5, 0.5);
+
+    let name = icon.iconName;
+    let playTitle = icon.playTitle;
+    let obj = {texture, name, playTitle};
+
+    texData.push(Object.assign({}, obj));
+  });
+
+  console.log(`Completed loading ${icons.length} icons`);
+  arrangeWords();
 });
 
 loader.onComplete.add(() => {
@@ -35,6 +55,8 @@ loader.onComplete.add(() => {
 
     texData.push(Object.assign({}, obj));
   });
+
+  progressObject.value = oldProgressValue + 50;
 
   console.log(`Completed loading ${icons.length} icons`);
   arrangeWords();
