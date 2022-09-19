@@ -1,16 +1,15 @@
-import * as PIXI from 'pixi.js';
-import * as d3 from 'd3';
-import { app, themeColor } from "../script.js";
+import { Container, Graphics, Text } from 'pixi.js';
+import { app } from "../script.js";
 
 const squareArray = ['(NAME)', '(PROJECT)'];
 const titleArray = ['(SUDEV KIYADA)', '(MY MARK ON INTERNET)'];
 const coordArray = ["22.3039° N\n70.8022° E", "67.0823° N\n32.1882° E"];
 
-const titleContainer = new PIXI.Container();
-const titleSquare = new PIXI.Graphics();
-const squareText = new PIXI.Text('(NAME)', {fontFamily : "Disket", fontSize: 20, fill : 0xFFFFFF, align : 'left'});
-const titleText = new PIXI.Text('(SUDEV KIYADA)', {fontFamily : "Disket", fontSize: 48, fill : 0xFFFFFF, align : 'left'});
-const coordText = new PIXI.Text("22.3039° N\n70.8022° E", {fontFamily : "Disket", fontSize: 20, fill : 0xFFFFFF, align : 'right'});
+const titleContainer = new Container();
+const titleSquare = new Graphics();
+const squareText = new Text('(NAME)', {fontFamily : "Disket", fontSize: 20, fill : 0xFFFFFF, align : 'left'});
+const titleText = new Text('(SUDEV KIYADA)', {fontFamily : "Disket", fontSize: 48, fill : 0xFFFFFF, align : 'left'});
+const coordText = new Text("22.3039° N\n70.8022° E", {fontFamily : "Disket", fontSize: 20, fill : 0xFFFFFF, align : 'right'});
 
 export function initTitle() {
     titleContainer.position.set(app.screen.width * 0.03, app.screen.width * 0.03);

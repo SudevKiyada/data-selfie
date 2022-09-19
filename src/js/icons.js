@@ -1,12 +1,9 @@
-import * as PIXI from 'pixi.js';
 import { Assets } from '@pixi/assets';
-import * as d3 from 'd3';
-import { dataIcons, init, progressObject, arrangeWords } from "../script.js";
+import { dataIcons, progressObject, arrangeWords } from "../script.js";
 
 let icons = [];
 
 let texData = [];
-let loader = new PIXI.Loader();
 let url = "./icons/";
 let oldProgressValue;
 
@@ -63,7 +60,7 @@ export function loadIcons() {
 //   arrangeWords();
 // });
 
-export {loader, texData};
+export {texData};
 
 
 // -----------------------------------------------------------------------------------

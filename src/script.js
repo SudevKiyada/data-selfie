@@ -7,13 +7,15 @@
 // info
 // loader
 
-import * as PIXI from 'pixi.js';
-import * as d3 from 'd3';
+import { Graphics, Container, Application, Text, Texture, Matrix, BLEND_MODES } from 'pixi.js';
+import { Assets } from '@pixi/assets';
+import {csv} from 'd3-fetch';
+import {scalePow} from 'd3-scale';
 import * as moment from 'moment';
 import {BloomFilter} from 'pixi-filters';
 import {Block} from './js/blocks_new.js';
 import {textBlock} from './js/textBlock_new.js';
-import {loader, texData, loadIcons} from './js/icons.js';
+import {loadIcons} from './js/icons.js';
 import {bgCodeTicker} from './js/code.js';
 import {initTitle, animateTitle} from './js/title.js';
 
@@ -26,21 +28,21 @@ let dataWords = [];
 let dataIcons = [];
 let dataApps = [];
 let dataVideos = [];
-let bgCodeTickerGraphics = new PIXI.Graphics();
-let plusGraphics = new PIXI.Graphics();
-let outlineGraphics = new PIXI.Graphics();
-let scanlineTexture;
+let bgCodeTickerGraphics = new Graphics();
+let plusGraphics = new Graphics();
+let outlineGraphics = new Graphics();
+let initFlag = true;
 
 // const themeColor = 0x93D94E;
 const themeColor = 0x0AA5FE;
 const themeColor2 = 0x0AA5FE;
 
 // PIXI variables
-const textContainer = new PIXI.Container();
-const faceContainer = new PIXI.Container();
+const textContainer = new Container();
+const faceContainer = new Container();
 
 // Create a new app (will auto-add extract plugin to renderer)
-const app = new PIXI.Application({
+const app = new Application({
     width : 1280,
     height: 1811,
     backgroundColor: 0x000000
@@ -60,7 +62,7 @@ const app = new PIXI.Application({
  outlineGraphics.closePath();
  outlineGraphics.zIndex = 8;
 
-const progressLoader = new PIXI.Text("(LOADING)",{fontFamily : "Disket", fontSize: 40, fill : themeColor, align : 'center', letterSpacing: 20});
+const progressLoader = new Text("(LOADING)",{fontFamily : "Disket", fontSize: 40, fill : themeColor, align : 'center', letterSpacing: 20});
 progressLoader.position.set(app.screen.width/2, window.innerHeight/2);
 progressLoader.anchor.set(0.5);
 progressLoader.zIndex = 30;
@@ -99,9 +101,12 @@ app.stage.filters = [bloom];
        let stringProgress = Math.floor(loaderText.length * this.progress / 100);
        progressLoader._text = "(" + maskText.substring(0, stringProgress) + loaderText.substring(stringProgress, loaderText.length) + ")";
        progressLoader.updateText();
-       if(this.progress >= 100){
-         init();
+       if(this.progress == 100 && initFlag){
+         // console.log("in progress cmplete");
+         if(initFlag)
+           init();
          app.stage.removeChild(progressLoader);
+         this.progress = 0;
        }
    }
 };
@@ -114,7 +119,7 @@ plusGraphics.visible = false;
  loadFaceBase();
 
 function loadFaceBase() {
-   console.log("logging loadFaceBase");
+   // console.log("logging loadFaceBase");
    const face_base = new Image();
    face_base.crossOrigin = "anonymous";
    face_base.src = "./face/face_base.png";
@@ -137,8 +142,8 @@ function loadFaceBase() {
 }
 
 function loadDB() {
-   console.log("Adding DB");
-   d3.csv('assets/tags.csv').then(function(data) {
+   // console.log("Adding DB");
+   csv('assets/tags.csv').then(function(data) {
       data.forEach(function (d){
        dataWords.push({tag: d.tag, frequency: d.frequency});
       });
@@ -146,7 +151,7 @@ function loadDB() {
       progressObject.value = progressObject.getProgress + 10;
    });
 
-   d3.csv('assets/vidsCompact.csv').then(function(data) {
+   csv('assets/vidsCompact.csv').then(function(data) {
       data.forEach(function (d){
 
          let time = moment(d.time).toDate();
@@ -160,7 +165,7 @@ function loadDB() {
       progressObject.value = progressObject.getProgress + 10;
    });
     
-   d3.csv('assets/icons_dataset.csv').then(function(data) {
+   csv('assets/icons_dataset.csv').then(function(data) {
       data.forEach(function (d){
 
          if(d.playTitle != "Unknown"){
@@ -170,12 +175,12 @@ function loadDB() {
              dataIcons.push({playTitle, iconName});
          }
       });
-         console.log(texData);
+         // console.log(texData);
          progressObject.value = progressObject.getProgress + 10;
          loadIcons();
    });
 
-   d3.csv('assets/appData.csv').then(function(data) {
+   csv('assets/appData.csv').then(function(data) {
       data.forEach(function (d){
          let time = moment(d.time).toDate();
          let text = d.title;
@@ -191,6 +196,8 @@ function loadDB() {
 }
 
 export function init() {
+   initFlag = false;
+   // console.log("Inside init");
    initTitle();
    app.stage.addChild(outlineGraphics);
    app.stage.sortableChildren = true;
@@ -220,9 +227,9 @@ export function init() {
       // console.log("divided to level :" + level);
    };
 
-   const texture2 = PIXI.Texture.from('./img/plus.svg');
-   // plusGraphics.blendMode = PIXI.BLEND_MODES.MULTIPLY;
-   plusGraphics.beginTextureFill({texture: texture2, matrix: new PIXI.Matrix(0.16, 0, 0, 0.16, 0, 0)});
+   const texture2 = Texture.from('./img/plus.svg');
+   // plusGraphics.blendMode = BLEND_MODES.MULTIPLY;
+   plusGraphics.beginTextureFill({texture: texture2, matrix: new Matrix(0.16, 0, 0, 0.16, 0, 0)});
    plusGraphics.drawRect(0, 0, app.screen.width, app.screen.height);
    plusGraphics.alpha = 0.1;
    plusGraphics.zIndex = 1;
@@ -236,32 +243,33 @@ export function init() {
    app.ticker.start();
    app.ticker.add(d => {
       animateTitle();
-      blocks.forEach(block => block.shimmer());
-      bgCodeTickerAnimate();
-      if(Math.random() < 0.03)
+      // if(textBlocks.length < textblocks_limit)
+      //    for(let i = 0; i < 3; i++){
+      //       arrangeWords();
+      //    }  
+      // blocks.forEach(block => block.shimmer());
+      // bgCodeTickerAnimate();
+      if(Math.random() < 0.01)
          tickerText();
-      textBlocks.forEach(block => block.shimmer());
+      // textBlocks.forEach(block => block.shimmer());
    });
 }
 
 function addBackground() {
-   const graphics = new PIXI.Graphics();
+   const graphics = new Graphics();
    graphics.beginFill(0x000405);
    graphics.drawRect(0, 0, app.screen.width, app.screen.height);
    app.stage.addChild(graphics);
 
-   scanlineTexture = PIXI.Texture.from('./img/scanline.png');
-   let scanlineLoader = new PIXI.Loader();
+   Assets.add('scanline', './img/scanline.png');
 
-   scanlineLoader.add('./img/scanline.png');
+   const texturesPromise = Assets.load(['scanline']);
 
-   scanlineLoader.load();
-
-   scanlineLoader.onComplete.add(() => {
-      console.log("scanline loaded");
-      let scanlineGraphics = new PIXI.Graphics();
-      scanlineGraphics.blendMode = PIXI.BLEND_MODES.MULTIPLY;
-      scanlineGraphics.beginTextureFill({texture: scanlineLoader.resources['./img/scanline.png'].texture, matrix: new PIXI.Matrix(0.5, 0, 0, 0.5, 0, 0)});
+   texturesPromise.then((textures) => {
+      // console.log("scanline loaded");
+      let scanlineGraphics = new Graphics();
+      scanlineGraphics.blendMode = BLEND_MODES.MULTIPLY;
+      scanlineGraphics.beginTextureFill({texture: textures['scanline'], matrix: new Matrix(0.5, 0, 0, 0.5, 0, 0)});
       scanlineGraphics.drawRect(0, 0, app.screen.width, app.screen.height);
       scanlineGraphics.alpha = 0.3;
       scanlineGraphics.zIndex = 100;
@@ -271,7 +279,7 @@ function addBackground() {
 }
 
 function addBGCodeTicker() {
-   bgCodeTickerGraphics = new PIXI.Text(bgCodeTicker,{fontFamily : "Disket", fontSize: 14, fill : 0xffffff28, align : 'left'});
+   bgCodeTickerGraphics = new Text(bgCodeTicker,{fontFamily : "Disket", fontSize: 14, fill : 0xffffff28, align : 'left'});
    bgCodeTickerGraphics.zIndex = 3;
    app.stage.addChild(bgCodeTickerGraphics);
 }
@@ -279,23 +287,27 @@ function addBGCodeTicker() {
 function tickerText(){
    let textToTicker = [];
 
+   if(textBlocks.length){
    while(textToTicker.length < 1){
-      let rndmTextBlock = Math.floor(Math.random() * textblocks_limit);
+      let rndmTextBlock = Math.floor(Math.random() * textBlocks.length);
+      // console.log(rndmTextBlock, textBlocks.length);
       textBlocks[rndmTextBlock].clock = app.ticker.lastTime;
       textToTicker.push(textBlocks[rndmTextBlock]);
    }
+   }
 
-   textToTicker.forEach(block => block.animateText());
+   textToTicker.forEach(block => {
+      if(!block.animating)
+        block.animateText()
+   });
 }
 
 export function arrangeWords(){ 
    let oldProgressValue = progressObject.getProgress;
-   while(textBlocks.length < textblocks_limit){
-     if(textBlocks.length % 100 == 0)
-      console.log("Done printing " + textBlocks.length + " textblocks.");
  
+   while(textBlocks.length < textblocks_limit){
      let str = dataWords[textBlocks.length].tag;
-     let sizeScale = d3.scalePow()
+     let sizeScale = scalePow()
                .exponent(2)
                .domain([0, 3725])
                .range([11, 80]);
@@ -303,9 +315,7 @@ export function arrangeWords(){
  
      if(tb.toAdd){
        textBlocks.push(tb);
-       progressObject.value = oldProgressValue + (textBlocks.length/textblocks_limit) * 30;
      }
-
    }
  
    // let ct = 0;
@@ -326,40 +336,9 @@ export function arrangeWords(){
    //   ct++;
    // }
 
-   progressObject.value = 100;
- 
-   console.log("Done printing " + textblocks_limit + " textblocks.");
+   if (initFlag)
+     progressObject.value = 100;
    // createLetterBase();
-}
-
-function imageProcessing(path) {
-   let tex = loader.resources[path].texture;
-   tex.defaultAnchor.set(0.5, 0.5);
-
-   return tex;
-
-   // to count average color value of icon
-   // const img = new Image();
-   // img.crossOrigin = "anonymous";
-   // img.src = url + iconNames[iconData.length];
-
-   // img.addEventListener('load', (e) => {
-   //    let obj = new Object(), avg = 0, count = 0, data;
-   //    let canvas = document.createElement('canvas');
-   //    let context  = canvas.getContext('2d');
-   //    canvas.width = img.width;
-   //    canvas.height = img.height;
-   //    context.drawImage(img, 0, 0, img.width, img.height );
-   //    data = context.getImageData(0, 0, canvas.width, canvas.height).data;
-   
-   //    for(let i = 0; i < data.length; i+= 4){
-   //    avg += (data[i] + data[i+1] + data[i+2]) / 3;
-   //    count++;
-   //    }
-
-   //    avg = (avg / count);
-   //    obj = {index: iconData.length, texture: tex, average: avg};
-   // });
 }
 
 function introTags(clock){
@@ -407,3 +386,40 @@ function renderfaceContainer(event) {
 }
 
 export {app, blocks, textContainer, faceContainer, face_data, face_base_context, level, threshold, textBlocks, dataIcons, dataApps, dataVideos, dataWords, themeColor, themeColor2, progressObject};
+
+// export function arrangeWords(){ 
+//    let oldProgressValue = progressObject.getProgress;
+ 
+//      let str = dataWords[textBlocks.length].tag;
+//      let sizeScale = d3.scalePow()
+//                .exponent(2)
+//                .domain([0, 3725])
+//                .range([11, 80]);
+//      let tb = new textBlock(Math.random() * app.screen.width, Math.random() * app.screen.height, sizeScale(dataWords[textBlocks.length].frequency), str, textBlocks.length);
+ 
+//      if(tb.toAdd){
+//        textBlocks.push(tb);
+//      }
+ 
+//    // let ct = 0;
+//    // while(ct < 2000){
+//    //   if(textBlocks.length % 100 == 0)
+//    //   console.log("Done printing " + textBlocks.length + " textblocks.");
+
+//    //   let str = dataWords[textBlocks.length].tag;
+//    //   let sizeScale = d3.scalePow()
+//    //             .exponent(2)
+//    //             .domain([0, 3725])
+//    //             .range([11, 32]);
+//    //   let tb = new textBlock(Math.random() * app.screen.width, Math.random() * app.screen.height, sizeScale(dataWords[textBlocks.length].frequency), str, textBlocks.length);
+
+//    //   if(tb.toAdd)
+//    //     textBlocks.push(tb);
+ 
+//    //   ct++;
+//    // }
+
+//    if (initFlag)
+//      progressObject.value = 100;
+//    // createLetterBase();
+// }

@@ -1,8 +1,10 @@
-import * as PIXI from 'pixi.js';
-import * as d3 from 'd3';
+import { Graphics, filters, BLEND_MODES, Matrix } from 'pixi.js';
+import { select } from 'd3-selection';
+import { scaleTime } from 'd3-scale';
+import {extent} from 'd3-array';
 import * as moment from 'moment';
-import {app, blocks, faceContainer, face_data, face_base_context, level, threshold, dataApps, themeColor2, dataIcons} from '../script.js';
-import { loader, texData } from './icons.js';
+import {app, blocks, faceContainer, face_data, face_base_context, threshold, dataApps, themeColor2} from '../script.js';
+import { texData } from './icons.js';
 
 export class Block{
   
@@ -20,7 +22,7 @@ export class Block{
       this.mouse = false;
       this.toDestroy = false;
       this.toDivide = false;
-      this.graphics = new PIXI.Graphics();
+      this.graphics = new Graphics();
       this.tAlpha = 0;
       this.iconName = "";
       this.playTitle = "AA";
@@ -38,10 +40,6 @@ export class Block{
             // Shows hand cursor
             this.graphics.buttonMode = true;
 
-            // Pointers normalize touch and mouse
-            // this.graphics.on('pointerdown', () => {
-            //     this.animate();
-            // });
 
             this.graphics.on('pointerover', (event) => {
                 this.displayStats(event);
@@ -52,15 +50,15 @@ export class Block{
             });
         }
 
-        let colorMatrix = new PIXI.filters.ColorMatrixFilter();
-        let colorMatrix2 = new PIXI.filters.ColorMatrixFilter();
+        let colorMatrix = new filters.ColorMatrixFilter();
+        let colorMatrix2 = new filters.ColorMatrixFilter();
         this.graphics.filters = [colorMatrix, colorMatrix2];
         colorMatrix.desaturate();
         colorMatrix.contrast(0.7, true);
         colorMatrix2.tint(themeColor2);
 
-        this.graphics.blendMode = PIXI.BLEND_MODES.ADD;
-        this.graphics.beginTextureFill({texture: this.ico, matrix: new PIXI.Matrix(this.size/240, 0, 0, this.size/240, this.x, this.y)});   // 240 because that's the icon size
+        this.graphics.blendMode = BLEND_MODES.ADD;
+        this.graphics.beginTextureFill({texture: this.ico, matrix: new Matrix(this.size/240, 0, 0, this.size/240, this.x, this.y)});   // 240 because that's the icon size
         this.graphics.alpha = this.tAlpha;
         this.graphics.zIndex = this.level / 6 * 20;
         this.graphics.drawRect(this.x + 0.05 * this.size, this.y + 0.05 * this.size, this.size * 0.9, this.size * 0.9);
@@ -147,7 +145,7 @@ export class Block{
         let icon_name = document.getElementById("icon_name");
         icon_name.innerHTML = this.playTitle;
 
-        let svg = d3.select("#appGraph")
+        let svg = select("#appGraph")
           .style("margin-top", '8px')
           .style("width", 'inherit')
           .style("height", '84px');
@@ -173,12 +171,12 @@ export class Block{
             (icon.operation == "Uninstalled") ? operations.push("Uninstalled") : operations.push("Installed");
         });
 
-        let extent = d3.extent(dates);
+        let extnt = extent(dates);
 
         svg.append("svg");
 
-        let timeScale = d3.scaleTime()
-                .domain(extent)
+        let timeScale = scaleTime()
+                .domain(extnt)
                 .range([0, document.getElementById("icon_name").offsetWidth - 3]);
         
         let chart = svg.append("g");
@@ -200,7 +198,7 @@ export class Block{
                   .attr("y", 48)
                   .attr("fill", "white")
                   .attr("class", "axis")
-                  .text(moment(extent[0]).format('DD-MM-YYYY'))
+                  .text(moment(extnt[0]).format('DD-MM-YYYY'))
                   .attr("text-anchor", "start")
                   .attr("font-size", "16px");
 
@@ -209,7 +207,7 @@ export class Block{
             .attr("y", 48)
             .attr("fill", "white")
             .attr("class", "axis")
-            .text(moment(extent[1]).format('DD-MM-YYYY'))
+            .text(moment(extnt[1]).format('DD-MM-YYYY'))
             .attr("text-anchor", "end")
             .attr("font-size", "16px");
 

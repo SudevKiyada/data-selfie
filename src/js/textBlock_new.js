@@ -1,7 +1,8 @@
-import * as PIXI from 'pixi.js';
-import * as d3 from 'd3';
+import { TextStyle, Text, Point } from 'pixi.js';
+import { select } from 'd3-selection';
+import { scaleTime } from 'd3-scale';
 import * as moment from 'moment';
-import {app, blocks, textContainer, face_data, face_base_context, level, threshold, textBlocks, dataWords, dataVideos, themeColor} from '../script.js';
+import {app, textContainer, face_data, textBlocks, dataWords, dataVideos, themeColor} from '../script.js';
 
 const tsb = document.getElementById("textSidebar");
 
@@ -21,6 +22,8 @@ export class textBlock{
       this.tAlpha = 1;
       this.clock = 0;
       this.tickerCtr = 0;
+      this.animating = false;
+      this.timeOut = 0;
       // this.bg = random(["chartreuse", "orangered", "red", "yellow", "deepskyblue"]);
 
       this.w = 0;
@@ -39,7 +42,7 @@ export class textBlock{
     }
 
     draw() {
-      this.graphics = new PIXI.Text(this.text,{fontFamily : "Disket", fontSize: this.size, fill : themeColor, align : 'center'});
+      this.graphics = new Text(this.text,{fontFamily : "Disket", fontSize: this.size, fill : themeColor, align : 'center'});
       this.graphics.alpha = this.tAlpha;
       this.graphics.position.x = this.x;
       this.graphics.position.y = this.y;
@@ -56,9 +59,11 @@ export class textBlock{
         this.graphics.buttonMode = true;
 
         this.graphics.on('pointerover', (event) => {
-            this.displayStats(event);
+            // this.displayStats(event);
             this.graphics.style._fill = "white";
             this.graphics.updateText();
+
+            this.timeOut = setTimeout(this.displayStats.bind(this), 500, event);
         });
 
         this.graphics.on('pointerdown', (event) => {
@@ -69,10 +74,11 @@ export class textBlock{
 
 
         this.graphics.on('pointerout', () => {
-          this.hideStats();
-          let style = new PIXI.TextStyle({fontFamily : "Disket", fontSize: this.size, fill : themeColor, align : 'center'});
+          let style = new TextStyle({fontFamily : "Disket", fontSize: this.size, fill : themeColor, align : 'center'});
           this.graphics.style = style;
           this.graphics.updateText();
+          clearTimeout(this.timeOut);
+          this.hideStats();
         });
 
         textContainer.addChild(this.graphics);
@@ -96,25 +102,6 @@ export class textBlock{
       this.bottom = Math.floor(this.by + this.h);
 
       // console.log(this);
-    }
-
-    display(){
-        push();
-        translate(this.bx, this.by);
-        // rotate(this.angle);
-        // fill(this.mousse ? "black" : this.bg);
-        noStroke();
-        // rect(-0.05 * this.w, -0.15 * this.h, this.w, this.h);
-        // rect(0, 0, this.w, this.h);
-        // this.mousse ? blendMode(BLEND) : blendMode(MULTIPLY);
-        let c1 = color("#3cbcfc");
-        let c2 = color("black");
-        let c3 = lerpColor(c2, c1, map(this.size, 0, 48, 0.7, 1));
-        this.mousse ? fill(255) : fill(c3);
-        textSize(this.size);
-        textFont(font);
-        text(this.text, (this.x - this.bx), (this.y - this.by));
-        pop();
     }
 
     test() {
@@ -143,8 +130,8 @@ export class textBlock{
  
          // check if text block's midpoint is on colored pixel
          for(let i = 0; i <= midPoints; i++){
-           let mU = new PIXI.Point(Math.floor(this.left + d * i/midPoints), this.top);
-           let mB = new PIXI.Point(Math.floor(this.left + d * i/midPoints), this.bottom);
+           let mU = new Point(Math.floor(this.left + d * i/midPoints), this.top);
+           let mB = new Point(Math.floor(this.left + d * i/midPoints), this.bottom);
  
            if(face_data[(mU.y * app.screen.width + mU.x) * 4 + 3] > 0){
              flag = false;
@@ -165,6 +152,7 @@ export class textBlock{
     }
 
     animateText() {
+      this.animating = true;
       this.interval = setInterval(() => {
         let len = Math.abs(Math.floor(this.text.length * Math.sin((app.ticker.lastTime - this.clock)/1000 + 2/3 * Math.PI)));
         this.graphics._text = this.text.substring(0, len-1) + symbols[Math.floor(Math.random() * symbols.length)] + ")";
@@ -174,6 +162,7 @@ export class textBlock{
           clearInterval(this.interval);
           this.graphics._text = this.text;
           this.graphics.updateText();
+          this.animating = false;
         }
       }, 30);
     }
@@ -185,6 +174,7 @@ export class textBlock{
     }
 
     displayStats(event) {
+      console.log(this.textO);
       let tag_name = document.getElementById("Tag");
       tag_name.innerHTML = '#' + this.textO;
 
@@ -195,14 +185,14 @@ export class textBlock{
 
       let extent = [new Date(2018, 1, 1), new Date()];
 
-      let svg = d3.select("#tagGraph")
+      let svg = select("#tagGraph")
                   .style("margin-top", '8px')
                   .style("width", 'inherit')
                   .style("height", '80px');
 
       svg.selectAll("*").remove();
 
-      let timeScale = d3.scaleTime()
+      let timeScale = scaleTime()
                 .domain(extent)
                 .range([20, document.getElementById("Tag").offsetWidth - 20]);
       
