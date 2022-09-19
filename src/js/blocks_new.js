@@ -1,3 +1,6 @@
+import * as PIXI from 'pixi.js';
+import * as d3 from 'd3';
+import * as moment from 'moment';
 import {app, blocks, faceContainer, face_data, face_base_context, level, threshold, dataApps, themeColor2, dataIcons} from '../script.js';
 import { loader, texData } from './icons.js';
 

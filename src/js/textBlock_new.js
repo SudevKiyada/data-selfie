@@ -1,3 +1,5 @@
+import * as PIXI from 'pixi.js';
+import * as d3 from 'd3';
 import {app, blocks, textContainer, face_data, face_base_context, level, threshold, textBlocks, dataWords, dataVideos, themeColor} from '../script.js';
 
 const tsb = document.getElementById("textSidebar");

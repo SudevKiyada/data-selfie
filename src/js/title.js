@@ -1,3 +1,5 @@
+import * as PIXI from 'pixi.js';
+import * as d3 from 'd3';
 import { app, themeColor } from "../script.js";
 
 const squareArray = ['(NAME)', '(PROJECT)'];

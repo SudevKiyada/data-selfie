@@ -7,6 +7,10 @@
 // info
 // loader
 
+import * as PIXI from 'pixi.js';
+import * as d3 from 'd3';
+import * as moment from 'moment';
+import {BloomFilter} from 'pixi-filters';
 import {Block} from './js/blocks_new.js';
 import {textBlock} from './js/textBlock_new.js';
 import {loader, texData, loadIcons} from './js/icons.js';
@@ -62,7 +66,7 @@ progressLoader.anchor.set(0.5);
 progressLoader.zIndex = 30;
 app.stage.addChild(progressLoader);
 
-let bloom = new PIXI.filters.BloomFilter(12);
+let bloom = new BloomFilter(12);
 app.stage.filters = [bloom];
 
  textContainer.zIndex = 10;

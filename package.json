@@ -1,6 +1,6 @@
 {
   "name": "data-selfie",
-  "default": "./src/index.html",
+  "default": "./src/script.js",
   "scripts": {
     "build": "webpack --config webpack.config.js"
   },

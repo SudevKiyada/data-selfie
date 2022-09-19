@@ -1,3 +1,5 @@
+import * as PIXI from 'pixi.js';
+import * as d3 from 'd3';
 import { dataIcons, init, progressObject, arrangeWords } from "../script.js";
 
 let icons = [];
