@@ -49,8 +49,7 @@ const app = new Application({
     backgroundColor: 0x000000,
     autoDensity: true,
     backgroundAlpha: 0,
-    powerPreference: 'high-performance',
-    resolution: 1
+    powerPreference: 'high-performance'
  });
 
  app.renderer.plugins.interaction.interactionFrequency = 50;
@@ -360,7 +359,7 @@ export function arrangeWords(){
 
 function loadBitmapFont() {
    app.loader.add('Disket', './assets/disket.fnt').load((e) => {
-      console.log("font added");
+      // console.log("font added");
       DisketBmpFnt = e.resources['Disket'];
       setupTitles();
       loadFaceBase();

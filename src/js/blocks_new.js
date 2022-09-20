@@ -69,9 +69,9 @@ export class Block{
             this.graphics.buttonMode = true;
 
 
-            // this.graphics.on('pointerover', (event) => {
-            //     this.displayStats(event);
-            // });
+            this.graphics.on('pointerover', (event) => {
+                this.displayStats(event);
+            });
 
             this.graphics.on('pointerout', () => {
                 this.hideStats();
