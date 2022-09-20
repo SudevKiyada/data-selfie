@@ -1,0 +1,1983 @@
+{
+  "frames": {
+    "SMS Organizer - Clean, Reminders, Offers & Backup": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 236,
+        "h": 236
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 236,
+        "h": 236
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "7Zipper 2.0 – Local and Cloud File Explorer": {
+      "frame": {
+        "x": 0,
+        "y": 236,
+        "w": 234,
+        "h": 236
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 3,
+        "w": 234,
+        "h": 236
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Hunter Assassin": {
+      "frame": {
+        "x": 0,
+        "y": 472,
+        "w": 211,
+        "h": 236
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 2,
+        "w": 211,
+        "h": 236
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "AIDA64": {
+      "frame": {
+        "x": 0,
+        "y": 708,
+        "w": 234,
+        "h": 235
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 2,
+        "w": 234,
+        "h": 235
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Samsung Link (Terminated)": {
+      "frame": {
+        "x": 211,
+        "y": 472,
+        "w": 234,
+        "h": 235
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 1,
+        "w": 234,
+        "h": 235
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Hike News & Content": {
+      "frame": {
+        "x": 234,
+        "y": 236,
+        "w": 208,
+        "h": 235
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 3,
+        "w": 208,
+        "h": 235
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Screen Filter": {
+      "frame": {
+        "x": 442,
+        "y": 236,
+        "w": 188,
+        "h": 235
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 28,
+        "y": 2,
+        "w": 188,
+        "h": 235
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "GSRTC": {
+      "frame": {
+        "x": 630,
+        "y": 236,
+        "w": 234,
+        "h": 234
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 3,
+        "w": 234,
+        "h": 234
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Root Checker": {
+      "frame": {
+        "x": 236,
+        "y": 0,
+        "w": 234,
+        "h": 234
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 6,
+        "w": 234,
+        "h": 234
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Beautiful Widgets Free": {
+      "frame": {
+        "x": 470,
+        "y": 0,
+        "w": 234,
+        "h": 233
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 3,
+        "w": 234,
+        "h": 233
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "DesiDime Online Shopping Deals & Coupons Community": {
+      "frame": {
+        "x": 703,
+        "y": 0,
+        "w": 233,
+        "h": 234
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 3,
+        "w": 233,
+        "h": 234
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Cyanogen Update Tracker": {
+      "frame": {
+        "x": 0,
+        "y": 943,
+        "w": 230,
+        "h": 234
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 6,
+        "w": 230,
+        "h": 234
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Manual Camera Compatibility": {
+      "frame": {
+        "x": 0,
+        "y": 1177,
+        "w": 234,
+        "h": 214
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 8,
+        "w": 234,
+        "h": 214
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Firefox Browser_ fast, private & safe web browser": {
+      "frame": {
+        "x": 0,
+        "y": 1411,
+        "w": 226,
+        "h": 233
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 0,
+        "w": 226,
+        "h": 233
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Inshorts - 60 words News summary": {
+      "frame": {
+        "x": 214,
+        "y": 1177,
+        "w": 232,
+        "h": 232
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 4,
+        "w": 232,
+        "h": 232
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "LG ThinQ": {
+      "frame": {
+        "x": 230,
+        "y": 943,
+        "w": 232,
+        "h": 232
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 5,
+        "w": 232,
+        "h": 232
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "PHP Viewer": {
+      "frame": {
+        "x": 234,
+        "y": 707,
+        "w": 232,
+        "h": 232
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 4,
+        "w": 232,
+        "h": 232
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "GO Launcher - 3D parallax Themes & HD Wallpapers": {
+      "frame": {
+        "x": 462,
+        "y": 471,
+        "w": 232,
+        "h": 231
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 5,
+        "w": 232,
+        "h": 231
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Advanced Download Manager": {
+      "frame": {
+        "x": 693,
+        "y": 471,
+        "w": 232,
+        "h": 196
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 22,
+        "w": 232,
+        "h": 196
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Code Hub": {
+      "frame": {
+        "x": 889,
+        "y": 471,
+        "w": 230,
+        "h": 231
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 9,
+        "w": 230,
+        "h": 231
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "The Wiki Game": {
+      "frame": {
+        "x": 864,
+        "y": 234,
+        "w": 230,
+        "h": 231
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 9,
+        "w": 230,
+        "h": 231
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Brain Dots": {
+      "frame": {
+        "x": 936,
+        "y": 0,
+        "w": 230,
+        "h": 230
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 7,
+        "w": 230,
+        "h": 230
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Moonrise Icon Pack": {
+      "frame": {
+        "x": 1094,
+        "y": 230,
+        "w": 230,
+        "h": 230
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 7,
+        "w": 230,
+        "h": 230
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Wysa_ anxiety, depression & sleep therapy chatbot": {
+      "frame": {
+        "x": 1166,
+        "y": 0,
+        "w": 210,
+        "h": 230
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 5,
+        "w": 210,
+        "h": 230
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "PitchBlack _ DarkRed CM13_12 Theme": {
+      "frame": {
+        "x": 0,
+        "y": 1644,
+        "w": 230,
+        "h": 172
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 39,
+        "w": 230,
+        "h": 172
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Crowdsource": {
+      "frame": {
+        "x": 0,
+        "y": 1874,
+        "w": 196,
+        "h": 166
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 22,
+        "y": 37,
+        "w": 196,
+        "h": 166
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Quambio": {
+      "frame": {
+        "x": 172,
+        "y": 1644,
+        "w": 229,
+        "h": 229
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 5,
+        "w": 229,
+        "h": 229
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Undeleter Recover Files & Data": {
+      "frame": {
+        "x": 226,
+        "y": 1409,
+        "w": 228,
+        "h": 229
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 8,
+        "w": 228,
+        "h": 229
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Cornerfly": {
+      "frame": {
+        "x": 446,
+        "y": 1175,
+        "w": 198,
+        "h": 229
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 38,
+        "y": 7,
+        "w": 198,
+        "h": 229
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "SD Card Manager (File Manager)": {
+      "frame": {
+        "x": 462,
+        "y": 939,
+        "w": 228,
+        "h": 228
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 8,
+        "w": 228,
+        "h": 228
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Floatify Lockscreen": {
+      "frame": {
+        "x": 644,
+        "y": 703,
+        "w": 227,
+        "h": 228
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 7,
+        "w": 227,
+        "h": 228
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Intune Company Portal": {
+      "frame": {
+        "x": 466,
+        "y": 703,
+        "w": 186,
+        "h": 177
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 27,
+        "y": 41,
+        "w": 186,
+        "h": 177
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Google Play services": {
+      "frame": {
+        "x": 196,
+        "y": 1873,
+        "w": 162,
+        "h": 207
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 39,
+        "y": 9,
+        "w": 162,
+        "h": 207
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Learn Japanese_ Lesson, News, Videos": {
+      "frame": {
+        "x": 401,
+        "y": 1638,
+        "w": 227,
+        "h": 228
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 9,
+        "w": 227,
+        "h": 228
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Vikres Hardware": {
+      "frame": {
+        "x": 403,
+        "y": 1866,
+        "w": 182,
+        "h": 212
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 29,
+        "y": 12,
+        "w": 182,
+        "h": 212
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "OnePlus Messages": {
+      "frame": {
+        "x": 615,
+        "y": 1866,
+        "w": 158,
+        "h": 182
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 41,
+        "y": 30,
+        "w": 158,
+        "h": 182
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "JioMart Online Shopping App": {
+      "frame": {
+        "x": 773,
+        "y": 1866,
+        "w": 180,
+        "h": 180
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 30,
+        "y": 30,
+        "w": 180,
+        "h": 180
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "VoLT Vocabulary Builder": {
+      "frame": {
+        "x": 454,
+        "y": 1404,
+        "w": 228,
+        "h": 227
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 6,
+        "w": 228,
+        "h": 227
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Knappily - The Knowledge App": {
+      "frame": {
+        "x": 628,
+        "y": 1632,
+        "w": 228,
+        "h": 226
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 9,
+        "w": 228,
+        "h": 226
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ASUS Weather": {
+      "frame": {
+        "x": 681,
+        "y": 1404,
+        "w": 227,
+        "h": 227
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 7,
+        "w": 227,
+        "h": 227
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Toolwiz Photos - Pro Editor": {
+      "frame": {
+        "x": 854,
+        "y": 1631,
+        "w": 227,
+        "h": 227
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 6,
+        "w": 227,
+        "h": 227
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Ten Percent Happier - Meditation & Sleep": {
+      "frame": {
+        "x": 953,
+        "y": 1858,
+        "w": 186,
+        "h": 186
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 27,
+        "y": 27,
+        "w": 186,
+        "h": 186
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ASUS Digital Clock & Widget": {
+      "frame": {
+        "x": 644,
+        "y": 1167,
+        "w": 227,
+        "h": 226
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 7,
+        "w": 227,
+        "h": 226
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Opera Mini - fast web browser": {
+      "frame": {
+        "x": 690,
+        "y": 931,
+        "w": 227,
+        "h": 218
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 11,
+        "y": 11,
+        "w": 227,
+        "h": 218
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "BusyBox": {
+      "frame": {
+        "x": 871,
+        "y": 703,
+        "w": 227,
+        "h": 217
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 5,
+        "w": 227,
+        "h": 217
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Greenify": {
+      "frame": {
+        "x": 870,
+        "y": 1158,
+        "w": 227,
+        "h": 207
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 17,
+        "w": 227,
+        "h": 207
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ASUS Sound Recorder": {
+      "frame": {
+        "x": 908,
+        "y": 930,
+        "w": 226,
+        "h": 226
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 7,
+        "w": 226,
+        "h": 226
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ASUS Themes – Stylish Themes": {
+      "frame": {
+        "x": 1088,
+        "y": 702,
+        "w": 226,
+        "h": 226
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 7,
+        "w": 226,
+        "h": 226
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Calculator - unit converter": {
+      "frame": {
+        "x": 1119,
+        "y": 460,
+        "w": 226,
+        "h": 226
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 7,
+        "w": 226,
+        "h": 226
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "FAQ _ ZenUI Help": {
+      "frame": {
+        "x": 1324,
+        "y": 230,
+        "w": 226,
+        "h": 226
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 7,
+        "w": 226,
+        "h": 226
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Mobile Manager": {
+      "frame": {
+        "x": 1376,
+        "y": 0,
+        "w": 226,
+        "h": 226
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 7,
+        "w": 226,
+        "h": 226
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "OK Screenshot": {
+      "frame": {
+        "x": 908,
+        "y": 1385,
+        "w": 226,
+        "h": 225
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 8,
+        "w": 226,
+        "h": 225
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ThemeX_ Extract Launcher Theme": {
+      "frame": {
+        "x": 1081,
+        "y": 1156,
+        "w": 210,
+        "h": 226
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 17,
+        "y": 14,
+        "w": 210,
+        "h": 226
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Data Restore Tool": {
+      "frame": {
+        "x": 1139,
+        "y": 928,
+        "w": 222,
+        "h": 222
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 9,
+        "w": 222,
+        "h": 222
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Gboard - the Google Keyboard": {
+      "frame": {
+        "x": 1314,
+        "y": 686,
+        "w": 222,
+        "h": 222
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 9,
+        "w": 222,
+        "h": 222
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Pixel Launcher": {
+      "frame": {
+        "x": 1361,
+        "y": 456,
+        "w": 222,
+        "h": 222
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 9,
+        "w": 222,
+        "h": 222
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Wallpapers": {
+      "frame": {
+        "x": 1583,
+        "y": 456,
+        "w": 222,
+        "h": 222
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 9,
+        "w": 222,
+        "h": 222
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Octoly": {
+      "frame": {
+        "x": 1805,
+        "y": 456,
+        "w": 222,
+        "h": 221
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 9,
+        "w": 222,
+        "h": 221
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Video Editor": {
+      "frame": {
+        "x": 1550,
+        "y": 226,
+        "w": 221,
+        "h": 222
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 9,
+        "w": 221,
+        "h": 222
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Snapseed": {
+      "frame": {
+        "x": 1602,
+        "y": 0,
+        "w": 207,
+        "h": 222
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 10,
+        "w": 207,
+        "h": 222
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Google Play Books - Ebooks, Audiobooks, and Comics": {
+      "frame": {
+        "x": 1771,
+        "y": 222,
+        "w": 200,
+        "h": 222
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 24,
+        "y": 9,
+        "w": 200,
+        "h": 222
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Opera browser with free VPN": {
+      "frame": {
+        "x": 1809,
+        "y": 0,
+        "w": 218,
+        "h": 218
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 11,
+        "y": 11,
+        "w": 218,
+        "h": 218
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Spotify_ Listen to podcasts & find music you love": {
+      "frame": {
+        "x": 1081,
+        "y": 1611,
+        "w": 218,
+        "h": 218
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 11,
+        "y": 11,
+        "w": 218,
+        "h": 218
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Graphic India - Read Comics!": {
+      "frame": {
+        "x": 1139,
+        "y": 1829,
+        "w": 218,
+        "h": 217
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 11,
+        "y": 11,
+        "w": 218,
+        "h": 217
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Algorithms_ Explained and Animated": {
+      "frame": {
+        "x": 1356,
+        "y": 1829,
+        "w": 214,
+        "h": 218
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 10,
+        "y": 12,
+        "w": 214,
+        "h": 218
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "JioSaavn Music & Radio – JioTunes, Podcasts, Songs": {
+      "frame": {
+        "x": 1133,
+        "y": 1382,
+        "w": 217,
+        "h": 217
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 11,
+        "y": 11,
+        "w": 217,
+        "h": 217
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Screencap ★ Root Screenshots": {
+      "frame": {
+        "x": 1299,
+        "y": 1599,
+        "w": 217,
+        "h": 216
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 217,
+        "h": 216
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Sketch a Day_ Daily challenges & tutorials": {
+      "frame": {
+        "x": 1291,
+        "y": 1150,
+        "w": 216,
+        "h": 216
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 12,
+        "w": 216,
+        "h": 216
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Back Button (No root)": {
+      "frame": {
+        "x": 1350,
+        "y": 1366,
+        "w": 213,
+        "h": 216
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 11,
+        "w": 213,
+        "h": 216
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Internet Speed Meter Lite": {
+      "frame": {
+        "x": 1361,
+        "y": 908,
+        "w": 216,
+        "h": 203
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 17,
+        "w": 216,
+        "h": 203
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Instant Apps": {
+      "frame": {
+        "x": 1563,
+        "y": 678,
+        "w": 207,
+        "h": 215
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 26,
+        "y": 10,
+        "w": 207,
+        "h": 215
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "AIMP": {
+      "frame": {
+        "x": 1507,
+        "y": 1124,
+        "w": 214,
+        "h": 214
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 13,
+        "w": 214,
+        "h": 214
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "B1 Archiver zip rar unzip": {
+      "frame": {
+        "x": 1564,
+        "y": 893,
+        "w": 213,
+        "h": 213
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 13,
+        "y": 13,
+        "w": 213,
+        "h": 213
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Night Mode - ONLY NOUGAT 7.0": {
+      "frame": {
+        "x": 1770,
+        "y": 678,
+        "w": 210,
+        "h": 210
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 15,
+        "w": 210,
+        "h": 210
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Opera Touch_ fast, new & modern web browser": {
+      "frame": {
+        "x": 1515,
+        "y": 1582,
+        "w": 210,
+        "h": 210
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 15,
+        "w": 210,
+        "h": 210
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Ola, Safe and affordable rides": {
+      "frame": {
+        "x": 1563,
+        "y": 1338,
+        "w": 210,
+        "h": 208
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 15,
+        "y": 16,
+        "w": 210,
+        "h": 208
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Google Street View": {
+      "frame": {
+        "x": 1725,
+        "y": 1106,
+        "w": 209,
+        "h": 209
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 26,
+        "y": 7,
+        "w": 209,
+        "h": 209
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "MyJio_ For Everything Jio": {
+      "frame": {
+        "x": 1777,
+        "y": 888,
+        "w": 208,
+        "h": 208
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 16,
+        "w": 208,
+        "h": 208
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Reddit": {
+      "frame": {
+        "x": 1570,
+        "y": 1792,
+        "w": 208,
+        "h": 208
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 16,
+        "y": 16,
+        "w": 208,
+        "h": 208
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "https___play.google.com_store_apps_details_id=sg.apps.garden.swiftguide": {
+      "frame": {
+        "x": 1725,
+        "y": 1548,
+        "w": 200,
+        "h": 207
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 20,
+        "w": 200,
+        "h": 207
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "File Transfer": {
+      "frame": {
+        "x": 1778,
+        "y": 1315,
+        "w": 200,
+        "h": 202
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 24,
+        "w": 200,
+        "h": 202
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Intra": {
+      "frame": {
+        "x": 1778,
+        "y": 1755,
+        "w": 200,
+        "h": 202
+      },
+      "rotated": true,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 20,
+        "y": 24,
+        "w": 200,
+        "h": 202
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "texture-13.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2048,
+      "h": 2048
+    },
+    "scale": 1
+  }
+}

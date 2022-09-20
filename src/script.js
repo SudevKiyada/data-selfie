@@ -52,6 +52,8 @@ const app = new Application({
     powerPreference: 'high-performance'
  });
 
+ app.renderer.plugins.interaction.interactionFrequency = 50;
+
  addBackground();
 
  const cutSize = 80
@@ -401,7 +403,7 @@ function renderfaceContainer(event) {
    let my = event.data.originalEvent.clientY;
 
    blocks.forEach(block => {
-      block.graphics.position.set((mx / app.screen.width) * (-1 * block.level**2) + block.level**2/2, (my / app.screen.height) * (-1 * block.level**2) + block.level**2/2);
+      block.graphics.position.set((mx / app.screen.width) * (-1 * block.level**2) + block.level**2/2 + block.x + block.size * 0.05, (my / app.screen.height) * (-1 * block.level**2) + block.level**2/2 + block.y + block.size * 0.05);
    });
 
    // faceContainer.x = mx / app.screen.width * (-60) + 30;

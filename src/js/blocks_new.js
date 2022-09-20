@@ -1,4 +1,4 @@
-import { Graphics, filters, BLEND_MODES, Matrix } from 'pixi.js';
+import { Graphics, filters, BLEND_MODES, Matrix, Sprite } from 'pixi.js';
 import { select } from 'd3-selection';
 import { scaleTime } from 'd3-scale';
 import {extent} from 'd3-array';
@@ -22,8 +22,8 @@ export class Block{
       this.mouse = false;
       this.toDestroy = false;
       this.toDivide = false;
-      this.graphics = new Graphics();
-      this.tAlpha = 0.0;
+      this.graphics = new Sprite();
+      this.tAlpha = 0.02;
       this.iconName = null;
       this.playTitle = "AA";
       this.iconsLoadedFlag = false;
@@ -35,10 +35,11 @@ export class Block{
     }
     
     box(){
-        if(this.graphics)
+        if(this.graphics){
             faceContainer.removeChild(this.graphics);
+        }
         // Opt-in to interactivity
-        if(this.tAlpha > 0.00){
+        if(true){
             this.graphics.interactive = true;
 
             // Shows hand cursor
@@ -65,14 +66,18 @@ export class Block{
         this.graphics.blendMode = BLEND_MODES.ADD;
         
         if(this.iconsLoadedFlag){
-            this.graphics.beginTextureFill({texture: this.ico, matrix: new Matrix(this.size/240, 0, 0, this.size/240, this.x, this.y)});   // 240 because that's the icon size
+            this.graphics.texture = this.ico;
+            this.graphics.position.set(this.x + 0.05 * this.size, this.y + 0.05 * this.size);
+            this.graphics.height = 0.9 * this.size;
+            this.graphics.width = 0.9 * this.size;
+            // this.graphics.beginTextureFill({texture: this.ico, matrix: new Matrix(this.size/240, 0, 0, this.size/240, this.x, this.y)});   // 240 because that's the icon size
             this.graphics.alpha = this.tAlpha;
         } else{
-            this.graphics.beginFill(themeColor);
-            this.graphics.alpha = 0.3;
+            // this.graphics.beginFill(themeColor);
+            // this.graphics.alpha = 0.3;
         }
         this.graphics.zIndex = this.level / 6 * 20;
-        this.graphics.drawRect(this.x + 0.05 * this.size, this.y + 0.05 * this.size, this.size * 0.9, this.size * 0.9);
+        // this.graphics.drawRect(this.x + 0.05 * this.size, this.y + 0.05 * this.size, this.size * 0.9, this.size * 0.9);
         faceContainer.addChild(this.graphics);
     }
     

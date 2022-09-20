@@ -1,0 +1,87 @@
+{
+  "frames": {
+    "Island": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 200,
+        "h": 191
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 24,
+        "y": 26,
+        "w": 200,
+        "h": 191
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "Hindu Calendar": {
+      "frame": {
+        "x": 200,
+        "y": 0,
+        "w": 194,
+        "h": 193
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 23,
+        "y": 23,
+        "w": 194,
+        "h": 193
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "QuickLyric - Instant Lyrics": {
+      "frame": {
+        "x": 0,
+        "y": 191,
+        "w": 192,
+        "h": 192
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 24,
+        "y": 24,
+        "w": 192,
+        "h": 192
+      },
+      "sourceSize": {
+        "w": 240,
+        "h": 240
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "texture-14.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 512,
+      "h": 512
+    },
+    "scale": 1
+  }
+}
