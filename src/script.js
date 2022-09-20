@@ -49,7 +49,8 @@ const app = new Application({
     backgroundColor: 0x000000,
     autoDensity: true,
     backgroundAlpha: 0,
-    powerPreference: 'high-performance'
+    powerPreference: 'high-performance',
+    resolution: 1
  });
 
  app.renderer.plugins.interaction.interactionFrequency = 50;
@@ -264,8 +265,8 @@ export function init() {
       //    }  
       // blocks.forEach(block => block.shimmer());
       // bgCodeTickerAnimate();
-      if(Math.random() < 0.01)
-         tickerText();
+      // if(Math.random() < 0.01)
+      //    tickerText();
       // textBlocks.forEach(block => block.shimmer());
    });
 }

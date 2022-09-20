@@ -1,4 +1,4 @@
-import { Graphics, filters, BLEND_MODES, Matrix, Sprite } from 'pixi.js';
+import { Graphics, filters, BLEND_MODES, Matrix, Sprite, Texture } from 'pixi.js';
 import { select } from 'd3-selection';
 import { scaleTime } from 'd3-scale';
 import {extent} from 'd3-array';
@@ -22,7 +22,7 @@ export class Block{
       this.mouse = false;
       this.toDestroy = false;
       this.toDivide = false;
-      this.graphics = new Sprite();
+      this.graphics = new Sprite(Texture.WHITE);
       this.tAlpha = 0.02;
       this.iconName = null;
       this.playTitle = "AA";
@@ -38,6 +38,29 @@ export class Block{
         if(this.graphics){
             faceContainer.removeChild(this.graphics);
         }
+        
+        if(this.iconsLoadedFlag){
+            this.graphics.texture = this.ico;
+            this.graphics.position.set(this.x + 0.05 * this.size, this.y + 0.05 * this.size);
+            this.graphics.height = 0.9 * this.size;
+            this.graphics.width = 0.9 * this.size;
+            this.graphics.alpha = this.tAlpha;
+        } else{
+            this.graphics.alpha = 0.3;
+        }
+
+        const colorMatrix = new filters.ColorMatrixFilter();
+        colorMatrix.desaturate();
+        colorMatrix.contrast(0.7, true);
+        const colorMatrix2 = new filters.ColorMatrixFilter();
+        colorMatrix2.tint(themeColor2);
+
+        this.graphics.zIndex = this.level / 6 * 20;
+
+        this.graphics.filters = [colorMatrix, colorMatrix2];
+
+        this.graphics.blendMode = BLEND_MODES.ADD;
+
         // Opt-in to interactivity
         if(true){
             this.graphics.interactive = true;
@@ -46,38 +69,15 @@ export class Block{
             this.graphics.buttonMode = true;
 
 
-            this.graphics.on('pointerover', (event) => {
-                this.displayStats(event);
-                this.iconName;
-            });
+            // this.graphics.on('pointerover', (event) => {
+            //     this.displayStats(event);
+            // });
 
             this.graphics.on('pointerout', () => {
                 this.hideStats();
             });
         }
 
-        let colorMatrix = new filters.ColorMatrixFilter();
-        let colorMatrix2 = new filters.ColorMatrixFilter();
-        this.graphics.filters = [colorMatrix, colorMatrix2];
-        colorMatrix.desaturate();
-        colorMatrix.contrast(0.7, true);
-        colorMatrix2.tint(themeColor2);
-
-        this.graphics.blendMode = BLEND_MODES.ADD;
-        
-        if(this.iconsLoadedFlag){
-            this.graphics.texture = this.ico;
-            this.graphics.position.set(this.x + 0.05 * this.size, this.y + 0.05 * this.size);
-            this.graphics.height = 0.9 * this.size;
-            this.graphics.width = 0.9 * this.size;
-            // this.graphics.beginTextureFill({texture: this.ico, matrix: new Matrix(this.size/240, 0, 0, this.size/240, this.x, this.y)});   // 240 because that's the icon size
-            this.graphics.alpha = this.tAlpha;
-        } else{
-            // this.graphics.beginFill(themeColor);
-            // this.graphics.alpha = 0.3;
-        }
-        this.graphics.zIndex = this.level / 6 * 20;
-        // this.graphics.drawRect(this.x + 0.05 * this.size, this.y + 0.05 * this.size, this.size * 0.9, this.size * 0.9);
         faceContainer.addChild(this.graphics);
     }
     
