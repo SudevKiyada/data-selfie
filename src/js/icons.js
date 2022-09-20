@@ -42,7 +42,6 @@ export function loadIcons() {
   // console.log("logging loadIcons");
   oldProgressValue = progressObject.getProgress;
   // console.log("to arrWords:", texData.length);
-  arrangeWords();
 
   // const texturesPromise = Assets.load(icoNameArray);
 

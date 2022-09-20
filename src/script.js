@@ -7,7 +7,7 @@
 // info
 // loader
 
-import { Graphics, Container, Application, Text, Texture, Matrix, BLEND_MODES } from 'pixi.js';
+import { Graphics, Container, Application, Text, Texture, Matrix, BLEND_MODES, Loader } from 'pixi.js';
 import { Assets } from '@pixi/assets';
 import {csv} from 'd3-fetch';
 import {scalePow} from 'd3-scale';
@@ -17,7 +17,7 @@ import {Block} from './js/blocks_new.js';
 import {textBlock} from './js/textBlock_new.js';
 import {loadIcons} from './js/icons.js';
 import {bgCodeTicker} from './js/code.js';
-import {initTitle, animateTitle} from './js/title.js';
+import {initTitle, animateTitle, setupTitles} from './js/title.js';
 
 // variables
 let blocks = [], textBlocks = [];
@@ -32,6 +32,7 @@ let bgCodeTickerGraphics = new Graphics();
 let plusGraphics = new Graphics();
 let outlineGraphics = new Graphics();
 let initFlag = true;
+let DisketBmpFnt = "";
 
 // const themeColor = 0x93D94E;
 const themeColor = 0x0AA5FE;
@@ -119,7 +120,7 @@ textContainer.visible = false;
 bgCodeTickerGraphics.visible = false;
 plusGraphics.visible = false;
 
- loadFaceBase();
+loadBitmapFont();
 
 function loadFaceBase() {
    // console.log("logging loadFaceBase");
@@ -164,6 +165,8 @@ function loadDB() {
 
        dataVideos.push({time, title, publisher, tags});
       });
+
+      arrangeWords();
 
       progressObject.value = progressObject.getProgress + 10;
    });
@@ -352,6 +355,15 @@ export function arrangeWords(){
    // createLetterBase();
 }
 
+function loadBitmapFont() {
+   app.loader.add('Disket', './assets/disket.fnt').load((e) => {
+      console.log("font added");
+      DisketBmpFnt = e.resources['Disket'];
+      setupTitles();
+      loadFaceBase();
+   });
+}
+
 function introTags(clock){
    let interval = setInterval(() => {
       let alpha = Math.abs((Math.sin((app.ticker.lastTime - clock)/2000 + 0)));
@@ -396,7 +408,7 @@ function renderfaceContainer(event) {
    // faceContainer.y = my / app.screen.height * (-60) + 30;
 }
 
-export {app, blocks, textContainer, faceContainer, face_data, face_base_context, level, threshold, textBlocks, dataIcons, dataApps, dataVideos, dataWords, themeColor, themeColor2, progressObject};
+export {app, blocks, textContainer, faceContainer, DisketBmpFnt, face_data, face_base_context, level, threshold, textBlocks, dataIcons, dataApps, dataVideos, dataWords, themeColor, themeColor2, progressObject};
 
 // export function arrangeWords(){ 
 //    let oldProgressValue = progressObject.getProgress;

@@ -1,8 +1,8 @@
-import { TextStyle, Text, Point } from 'pixi.js';
+import { TextStyle, Text, Point, BitmapText, BitmapTextStyle, Loader } from 'pixi.js';
 import { select } from 'd3-selection';
 import { scaleTime } from 'd3-scale';
 import * as moment from 'moment';
-import {app, textContainer, face_data, textBlocks, dataWords, dataVideos, themeColor} from '../script.js';
+import {app, textContainer, face_data, textBlocks, dataWords, dataVideos, themeColor, DisketBmpFnt} from '../script.js';
 
 const tsb = document.getElementById("textSidebar");
 
@@ -42,7 +42,7 @@ export class textBlock{
     }
 
     draw() {
-      this.graphics = new Text(this.text,{fontFamily : "Disket", fontSize: this.size, fill : themeColor, align : 'center'});
+      this.graphics = new BitmapText(this.text,{fontName : 'Disket Mono', fontSize: this.size, tint : themeColor, align : 'center'});
       this.graphics.alpha = this.tAlpha;
       this.graphics.position.x = this.x;
       this.graphics.position.y = this.y;
@@ -60,7 +60,7 @@ export class textBlock{
 
         this.graphics.on('pointerover', (event) => {
             // this.displayStats(event);
-            this.graphics.style._fill = "white";
+            this.graphics._tint = 0xFFFFFF;
             this.graphics.updateText();
 
             this.timeOut = setTimeout(this.displayStats.bind(this), 500, event);
@@ -68,14 +68,13 @@ export class textBlock{
 
         this.graphics.on('pointerdown', (event) => {
           this.persistStats();
-          this.graphics.style._fill = "white";
+          this.graphics._tint = 0xFFFFFF;
           this.graphics.updateText();
         });
 
 
         this.graphics.on('pointerout', () => {
-          let style = new TextStyle({fontFamily : "Disket", fontSize: this.size, fill : themeColor, align : 'center'});
-          this.graphics.style = style;
+          this.graphics._tint = themeColor;
           this.graphics.updateText();
           clearTimeout(this.timeOut);
           this.hideStats();

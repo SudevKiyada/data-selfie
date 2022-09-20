@@ -1,16 +1,22 @@
-import { Container, Graphics, Text } from 'pixi.js';
+import { Container, Graphics, Text, BitmapText } from 'pixi.js';
 import { app } from "../script.js";
 
-const squareArray = ['(NAME)', '(PROJECT)'];
-const titleArray = ['(SUDEV KIYADA)', '(MY MARK ON INTERNET)'];
-const coordArray = ["(22.3039° N\n70.8022° E", "(67.0823° N\n32.1882° E", "(PO.TEST° N\nPO.TEST° E"];
-let currentCoord = 0;
+let squareArray, titleArray, coordArray, currentCoord;
 
-const titleContainer = new Container();
-const titleSquare = new Graphics();
-const squareText = new Text('(NAME)', {fontFamily : "Disket", fontSize: 20, fill : 0xFFFFFF, align : 'left'});
-const titleText = new Text('(SUDEV KIYADA)', {fontFamily : "Disket", fontSize: 48, fill : 0xFFFFFF, align : 'left'});
-const coordText = new Text("22.3039° N\n70.8022° E", {fontFamily : "Disket", fontSize: 20, fill : 0xFFFFFF, align : 'right'});
+let titleContainer, titleSquare, squareText, titleText, coordText;
+
+export function setupTitles() {
+    squareArray = ['(NAME)', '(PROJECT)'];
+    titleArray = ['(SUDEV KIYADA)', '(MY MARK ON INTERNET)'];
+    coordArray = ["(22.3039° N\n70.8022° E", "(67.0823° N\n32.1882° E", "(PO.TEST° N\nPO.TEST° E"];
+    currentCoord = 0;
+
+    titleContainer = new Container();
+    titleSquare = new Graphics();
+    squareText = new BitmapText('(NAME)', {fontName : "Disket Mono", fontSize: 20, fill : 0xFFFFFF, align : 'left'});
+    titleText = new BitmapText('(SUDEV KIYADA)', {fontName : "Disket Mono", fontSize: 48, fill : 0xFFFFFF, align : 'left'});
+    coordText = new BitmapText("22.3039° N\n70.8022° E", {fontName : "Disket Mono", fontSize: 20, fill : 0xFFFFFF, align : 'right'});
+}
 
 export function initTitle() {
     titleContainer.position.set(app.screen.width * 0.03, app.screen.width * 0.03);
