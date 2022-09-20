@@ -174,7 +174,6 @@ export class textBlock{
     }
 
     displayStats(event) {
-      console.log(this.textO);
       let tag_name = document.getElementById("Tag");
       tag_name.innerHTML = '#' + this.textO;
 
@@ -206,6 +205,7 @@ export class textBlock{
             .attr("height", 30)
             .attr("opacity", 0.1)
             .attr("fill", "red")
+            .style("mix-blend-mode", "screen")
             .attr("x", function(d) { return timeScale(d.time);})
             .attr("y", 0)
             .on('mouseover', (event, d) => {

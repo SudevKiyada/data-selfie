@@ -3,7 +3,8 @@ import { app } from "../script.js";
 
 const squareArray = ['(NAME)', '(PROJECT)'];
 const titleArray = ['(SUDEV KIYADA)', '(MY MARK ON INTERNET)'];
-const coordArray = ["22.3039° N\n70.8022° E", "67.0823° N\n32.1882° E"];
+const coordArray = ["(22.3039° N\n70.8022° E", "(67.0823° N\n32.1882° E", "(PO.TEST° N\nPO.TEST° E"];
+let currentCoord = 0;
 
 const titleContainer = new Container();
 const titleSquare = new Graphics();
@@ -54,20 +55,18 @@ export function animateTitle() {
     titleText._text = titleTxt.substring(0, len) + ")";
     titleText.updateText();
 
+    let crdText = '';
+    crdText = coordArray[currentCoord];
+    
+    len = Math.abs(Math.floor(crdText.length * Math.abs(Math.sin(app.ticker.lastTime/1000))));
+
+    if(len <= 0.1)
+        currentCoord = (currentCoord + 1) % coordArray.length;
+    
+    coordText._text = crdText.substring(0, len+1) + ")";
+    coordText.updateText();
+    
     titleSquare.alpha = Math.abs(Math.sin(app.ticker.lastTime/1000));
-
-    // let crdText = '';
-    // if(Math.sin(app.ticker.lastTime/1000) > 0)
-    //     crdText = coordArray[0];
-    // else
-    //     crdText = coordArray[1];
-
-    // len = Math.abs(Math.floor(crdText.length * Math.abs(Math.sin(app.ticker.lastTime/1000))));
-
-    // titleText._text = crdText.substring(0, len) + ")";
-    // titleText.updateText();
-
-    // titleSquare.alpha = Math.abs(Math.sin(app.ticker.lastTime/1000));
 }
 
 export {titleContainer};

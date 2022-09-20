@@ -207,25 +207,32 @@ export function init() {
    let b = new Block(0, app.screen.height - app.screen.width, app.screen.width, 0);
    blocks.push(b);
 
-   for(let i = 0; i < 6; i++) {
+   window.onmousedown = (() => {
+      if(level < 6) {
 
-      blocks.forEach((block, index) => {
-         if(block.level < 6 && block.test())
-            block.divide();
-      });
+         blocks.forEach((block, index) => {
+            if(block.level < 6 && block.test())
+               block.divide();
+         });
 
-      function chkDestroy(blk) {
-         return blk.toDestroy == false;
+         function chkDestroy(blk) {
+            return blk.toDestroy == false;
+         }
+
+         let tempBlock = blocks.filter(chkDestroy);
+         blocks = [];
+         blocks = [...tempBlock];
+
+         level++;
+
+         for(let i = (textBlocks.length / 6 * (level-1)); i <= (textBlocks.length / 6 * (level) ); i++){
+            let j = Math.floor(i);
+            textBlocks[j].graphics.visible = true;
+         }
+
+         // console.log("divided to level :" + level);
       }
-
-      let tempBlock = blocks.filter(chkDestroy);
-      blocks = [];
-      blocks = [...tempBlock];
-
-      level++;
-
-      // console.log("divided to level :" + level);
-   };
+   });
 
    const texture2 = Texture.from('./img/plus.svg');
    // plusGraphics.blendMode = BLEND_MODES.MULTIPLY;
@@ -315,6 +322,7 @@ export function arrangeWords(){
  
      if(tb.toAdd){
        textBlocks.push(tb);
+       tb.graphics.visible = false;
      }
    }
  

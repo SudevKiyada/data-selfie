@@ -3,7 +3,7 @@ import { select } from 'd3-selection';
 import { scaleTime } from 'd3-scale';
 import {extent} from 'd3-array';
 import * as moment from 'moment';
-import {app, blocks, faceContainer, face_data, face_base_context, threshold, dataApps, themeColor2} from '../script.js';
+import {app, blocks, faceContainer, face_data, face_base_context, threshold, dataApps, themeColor2, themeColor} from '../script.js';
 import { texData } from './icons.js';
 
 export class Block{
@@ -23,9 +23,11 @@ export class Block{
       this.toDestroy = false;
       this.toDivide = false;
       this.graphics = new Graphics();
-      this.tAlpha = 0;
-      this.iconName = "";
+      this.tAlpha = 0.02;
+      this.iconName = null;
       this.playTitle = "AA";
+      this.iconsLoadedFlag = false;
+      this.iconIndex = null;
 
       this.findMean();
       this.breakable = (this.size <= 4) ? false : this.test();
@@ -33,6 +35,8 @@ export class Block{
     }
     
     box(){
+        if(this.graphics)
+            faceContainer.removeChild(this.graphics);
         // Opt-in to interactivity
         if(this.tAlpha > 0.01){
             this.graphics.interactive = true;
@@ -43,6 +47,7 @@ export class Block{
 
             this.graphics.on('pointerover', (event) => {
                 this.displayStats(event);
+                this.iconName;
             });
 
             this.graphics.on('pointerout', () => {
@@ -58,8 +63,14 @@ export class Block{
         colorMatrix2.tint(themeColor2);
 
         this.graphics.blendMode = BLEND_MODES.ADD;
-        this.graphics.beginTextureFill({texture: this.ico, matrix: new Matrix(this.size/240, 0, 0, this.size/240, this.x, this.y)});   // 240 because that's the icon size
-        this.graphics.alpha = this.tAlpha;
+        
+        if(this.iconsLoadedFlag){
+            this.graphics.beginTextureFill({texture: this.ico, matrix: new Matrix(this.size/240, 0, 0, this.size/240, this.x, this.y)});   // 240 because that's the icon size
+            this.graphics.alpha = this.tAlpha;
+        } else{
+            this.graphics.beginFill(themeColor);
+            this.graphics.alpha = 0.3;
+        }
         this.graphics.zIndex = this.level / 6 * 20;
         this.graphics.drawRect(this.x + 0.05 * this.size, this.y + 0.05 * this.size, this.size * 0.9, this.size * 0.9);
         faceContainer.addChild(this.graphics);
@@ -84,16 +95,32 @@ export class Block{
         this.meanA = Math.floor(aAvg / (color_data.length / 4));
 
         // console.log(Math.floor((((this.meanR + this.meanG + this.meanB) / 3) * 841) / 255));
-        let randomIconFromData = (blocks.length + Math.floor(Math.random() * texData.length)) % texData.length;
-        this.ico = texData[randomIconFromData].texture;
-        this.iconName = texData[randomIconFromData].name;
-        this.playTitle = texData[randomIconFromData].playTitle;
+            this.iconIndex = (blocks.length + Math.floor(Math.random() * texData.length)) % texData.length;
+            
+            if(this.iconName == null){
+                this.iconName = texData[this.iconIndex].name;
+                this.playTitle = texData[this.iconIndex].playTitle;
+            }
 
-        this.tAlpha = this.meanA < 40 ? this.meanA/255 : ((this.meanR + this.meanG + this.meanB) / (3 * 255) * 1 + 0.0);
+            if(texData[this.iconIndex].texture != null){
+                this.iconsLoadedFlag = true;
+                this.loadTexture();
+            }
+
+            // if(texData[this.iconIndex].texture != null)
+            //     this.iconsLoadedFlag = true;
         }
         catch(err) {
             console.log(err);
             console.log(this);
+        }
+    }
+
+    loadTexture() {
+        if(this.iconsLoadedFlag){
+            this.ico = texData[this.iconIndex].texture;
+
+            this.tAlpha = this.meanA < 40 ? this.meanA/255 : ((this.meanR + this.meanG + this.meanB) / (3 * 255) * 1 + 0.0);
         }
     }
     

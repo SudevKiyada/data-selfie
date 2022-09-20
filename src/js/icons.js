@@ -1,5 +1,5 @@
 import { Assets } from '@pixi/assets';
-import { dataIcons, progressObject, arrangeWords } from "../script.js";
+import { dataIcons, progressObject, blocks, arrangeWords } from "../script.js";
 
 let icons = [];
 
@@ -7,35 +7,67 @@ let texData = [];
 let url = "./icons/";
 let oldProgressValue;
 
+let iconsLoadedFlag = false;
+
 export function loadIcons() {
   let icoNameArray = [];
   dataIcons.forEach(icon => {
     icons.push(icon.iconName);
     Assets.add(icon.iconName, url + icon.iconName + '.jpg');
     icoNameArray.push(icon.iconName);
+
+    let name = icon.iconName;
+    let playTitle = icon.playTitle;
+    let obj = {texture: null, name, playTitle};
+
+    texData.push(Object.assign({}, obj));
+
+    const texturesPromise = Assets.load([icon.iconName]);
+
+    texturesPromise.then((textures) => {
+      let ind = texData.findIndex(x => x.name == icon.iconName);
+      texData[ind].texture = textures[icon.iconName];
+
+      let b = blocks.filter(block => block.iconName == icon.iconName);
+      b.forEach(block => {
+        block.iconsLoadedFlag = true;
+        block.loadTexture();
+        block.box();
+      });
+    });
+
   })
 
   // loader.load();
-  console.log("logging loadIcons");
+  // console.log("logging loadIcons");
   oldProgressValue = progressObject.getProgress;
+  // console.log("to arrWords:", texData.length);
+  arrangeWords();
 
-  const texturesPromise = Assets.load(icoNameArray);
+  // const texturesPromise = Assets.load(icoNameArray);
 
-  texturesPromise.then((textures) => {
-    dataIcons.forEach((icon, ind) =>{
-      let texture = textures[icon.iconName];
-      // texture.defaultAnchor.set(0.5, 0.5);
+  // texturesPromise.then((textures) => {
+  //   dataIcons.forEach((icon, ind) =>{
+  //     let texture = textures[icon.iconName];
+  //     // texture.defaultAnchor.set(0.5, 0.5);
   
-      let name = icon.iconName;
-      let playTitle = icon.playTitle;
-      let obj = {texture, name, playTitle};
+  //     let name = icon.iconName;
+  //     let playTitle = icon.playTitle;
+  //     let obj = {texture, name, playTitle};
   
-      texData.push(Object.assign({}, obj));
-    });
+  //     texData.push(Object.assign({}, obj));
+  //   });
+
+  //   iconsLoadedFlag = true;
+  //   console.log("loaded icons");
+
+  //   blocks.forEach(block => {
+  //     block.findMean();
+  //     block.box();
+  //   });
   
-    console.log(`Completed loading ${icons.length} icons`);
-    arrangeWords();
-  });
+    // console.log(`Completed loading ${icons.length} icons`);
+  // });
 }
 
 // loader.onProgress.add((e) => {
@@ -60,7 +92,7 @@ export function loadIcons() {
 //   arrangeWords();
 // });
 
-export {texData};
+export {texData, iconsLoadedFlag};
 
 
 // -----------------------------------------------------------------------------------
