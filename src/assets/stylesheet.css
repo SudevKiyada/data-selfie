@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'Disket Mono';
-    src: url('DisketMono.woff2') format('woff2'),
-        url('DisketMono.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-

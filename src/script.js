@@ -45,7 +45,10 @@ const faceContainer = new Container();
 const app = new Application({
     width : 1280,
     height: 1811,
-    backgroundColor: 0x000000
+    backgroundColor: 0x000000,
+    autoDensity: true,
+    backgroundAlpha: 0,
+    powerPreference: 'high-performance'
  });
 
  addBackground();

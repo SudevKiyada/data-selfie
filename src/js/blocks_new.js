@@ -23,7 +23,7 @@ export class Block{
       this.toDestroy = false;
       this.toDivide = false;
       this.graphics = new Graphics();
-      this.tAlpha = 0.02;
+      this.tAlpha = 0.0;
       this.iconName = null;
       this.playTitle = "AA";
       this.iconsLoadedFlag = false;
@@ -38,7 +38,7 @@ export class Block{
         if(this.graphics)
             faceContainer.removeChild(this.graphics);
         // Opt-in to interactivity
-        if(this.tAlpha > 0.01){
+        if(this.tAlpha > 0.00){
             this.graphics.interactive = true;
 
             // Shows hand cursor
